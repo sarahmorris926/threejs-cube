@@ -1,0 +1,24 @@
+{
+  "name": "threejs-cube",
+  "version": "1.0.0",
+  "description": "Discovering what Three.JS can do by creating a spinning cube on a webpage.",
+  "main": "index.js",
+  "dependencies": {
+    "three": "^0.92.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarahmorris926/threejs-cube.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sarahmorris926/threejs-cube/issues"
+  },
+  "homepage": "https://github.com/sarahmorris926/threejs-cube#readme"
+}
