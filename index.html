@@ -1,17 +1,18 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 
 <head>
   <meta charset=utf-8>
-  <title>My first three.js app</title>
+  <title>Three.JS Box</title>
   <style>
     body {
       margin: 0;
+      overflow: hidden;
     }
 
     canvas {
       width: 100%;
-      height: 100%
+      height: 100%;
     }
   </style>
 </head>
@@ -20,13 +21,13 @@
   <script src="node_modules/three/build/three.js"></script>
   <script>
     var scene = new THREE.Scene();
-    var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     var renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderer.domElement);
 
     var geometry = new THREE.BoxGeometry(1, 1, 1);
-    var material = new THREE.MeshBasicMaterial({color: 0xE06666});
+    var material = new THREE.MeshBasicMaterial({ color: 0xE06666 });
     var cube = new THREE.Mesh(geometry, material);
     scene.add(cube);
 
@@ -41,6 +42,74 @@
     animate();
 
   </script>
+</body>
+
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Youtube Three.JS Tutorial</title>
+
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <canvas id="Canvas"></canvas>
+  <script src="node_modules/three/build/three.js"></script>
+
+  <script>
+    var renderer, camera, scene, light, light1, geometry, material, mesh;
+
+    // renderer
+    renderer = new THREE.WebGLRenderer({canvas: document.getElementById('Canvas'), antialias: true});
+    renderer.setClearColor(0x00ffff);
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+    // camera
+    camera = new THREE.PerspectiveCamera(35, window.innerWidth/window.innerHeight, 0.1, 3000);
+
+    // scene
+    scene = new THREE.Scene();
+
+    // lights
+    light = new THREE.AmbientLight(0xffffff, 0.5);
+    light1 = new THREE.PointLight(0xffffff, 0.5);
+    scene.add(light, light1);
+
+    // object
+    geometry = new THREE.BoxGeometry(100, 100, 100);
+    material = new THREE.MeshNormalMaterial();
+    mesh = new THREE.Mesh(geometry, material);
+    mesh.position.set(0, 0, -1000);
+
+    scene.add(mesh);
+
+    // render loop
+    requestAnimationFrame(render);
+
+    function render() {
+      mesh.rotation.x += 0.01;
+      mesh.rotation.y += 0.01;
+      renderer.render(scene, camera);
+      requestAnimationFrame(render);
+    }
+
+  </script>
+
 </body>
 
 </html>
