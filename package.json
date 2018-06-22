@@ -4,7 +4,8 @@
   "description": "Discovering what Three.JS can do by creating a spinning cube on a webpage.",
   "main": "index.js",
   "dependencies": {
-    "three": "^0.92.0"
+    "three": "^0.92.0",
+    "three-orbit-controls": "^82.1.0"
   },
   "devDependencies": {},
   "scripts": {
